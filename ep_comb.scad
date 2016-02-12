@@ -84,6 +84,6 @@ module logo(t, s = 3, style = "") {
 * 
 * Copyright (c) 2016 Adm Chrysler
 * www.admchrysler.com / chrysler@cornell.edu
-* Licensed under the MIT (MIT-LICENSE.txt) license. 
+* Licensed under the MIT (LICENSE.txt) license. 
 *
 */
