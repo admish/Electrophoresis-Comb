@@ -11,7 +11,7 @@ echo(version=version());
 *
 */
 
-/* Manual settings */
+/* Manual settings
 tooth_count = 8; // Number of wells
 tooth_width = 5.6; // Width of each tooth
 tooth_thickness = 1.5; // Thickness of each tooth
@@ -19,12 +19,12 @@ tooth_gap = 1.6; // Spacing between teeth.
 
 tooth_length = 17.75;  // Length of teeth (measured perpendicular from comb)
 tooth_margin = 14.545; // Width reserved on either end of comb to be free of teeth.
-
+ */
 /*8 Tooth settings
 tooth_count = 8; tooth_width = 5.8; tooth_thickness = 1.5; tooth_gap = 1.6; tooth_length = 17.75; tooth_margin = 14.545;*/
 
-/*15 Tooth settings
- tooth_count = 15; tooth_width = 2.8; tooth_thickness = 1.5; tooth_gap = 1.0; tooth_length = 17.75; tooth_margin = 14.545;*/
+/*15 Tooth settings*/
+ tooth_count = 15; tooth_width = 2.8; tooth_thickness = 1.5; tooth_gap = 1.0; tooth_length = 17.75; tooth_margin = 14.545;
  
 // Compatible with Bio-RAD baths.  Do not modify the following settings  
 // unless you are using another manufacture.
