@@ -1,16 +1,16 @@
 echo(version=version());
 
-// Parameters  (Only edit these)
+// Parameters
 tooth_count = 8; // Number of wells
 tooth_width = 5.6; // Width of each tooth
 tooth_thickness = 1.5; // Thickness of each tooth
 tooth_gap = 1.6; // Spacing between teeth.
 tooth_length = 17.75;  // Length of teeth (measured perpendicular from bottom of support)
-text_label = "Weill Institute for Cell and Molecular Biology";
- union() {
-     
+text_label = "Weill Institute for Cell and Molecular Biology"; // Label or name you want to appear on the side
 
-     
+
+
+union() { 
 // Locking Blocks.  Delete the following two lines to remove square blocks on underside of comb
     translate([(body_x/2)-support_x, 0, -support_z]) linear_extrude(height = support_z) square([support_x, support_y], center = false); // Right
     translate([-body_x/2, 0, -support_z]) linear_extrude(height = support_z) square([support_x, support_y], center = false); // Left
@@ -87,6 +87,7 @@ module logo(t, s = 2.5, style = "") {
 * 
 * Copyright (c) 2016 Adm Chrysler
 * www.admchrysler.com / chrysler@cornell.edu
-* Licensed under the MIT (LICENSE.txt) license. 
+* Licensed under the Creative Commons
+* Attribution - Non-Commercial - Share Alike license.
 *
 */
