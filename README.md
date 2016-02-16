@@ -5,7 +5,7 @@ Designed using [OpenSCAD](http://www.openscad.org/), a free program for creating
 
 #### 8 tooth comb
 
-![8 tooth comb](https://github.com/admish/Electrophoresis-Comb/blob/master/STL%20Files/8_teeth.png "8 tooth comb")
+![](https://github.com/admish/Electrophoresis-Comb/blob/master/STL%20Files/left_angle.png "")
 
 #### 15 tooth comb
-![15 tooth comb](https://github.com/admish/Electrophoresis-Comb/blob/master/STL%20Files/15_teeth.png "15 tooth comb")
+![](https://github.com/admish/Electrophoresis-Comb/blob/master/STL%20Files/right_angle.png "")
