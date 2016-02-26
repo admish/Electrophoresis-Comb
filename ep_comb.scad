@@ -1,13 +1,26 @@
 echo(version=version());
+// Values are measured in mm
 
-// Parameters
-tooth_count = 8; // Number of wells
-tooth_width = 5.6; // Width of each tooth
-tooth_thickness = 1.5; // Thickness of each tooth
-tooth_gap = 1.6; // Spacing between teeth.
-tooth_length = 17.75;  // Length of teeth (measured perpendicular from bottom of support)
-text_label = "Weill Institute for Cell and Molecular Biology"; // Label or name you want to appear on the side
+// Number of wells
+tooth_count = 8; 
 
+// Width of each tooth
+tooth_width = 5.6; 
+
+// Thickness of each tooth
+tooth_thickness = 1.5; 
+
+// Spacing between teeth.
+tooth_gap = 1.6; 
+
+// Length of teeth (measured perpendicular from bottom of support)
+tooth_length = 17.75;  
+
+// Label or name you want to appear on the side
+text_label = "Your Text Here"; 
+
+// Height of upper support on teeth
+tooth_support = 6;
 
 
 union() { 
@@ -20,21 +33,26 @@ union() {
     linear_extrude(height = 5, scale = 0.95)
     square([body_x, body_y], center = true);
 
+// Teeth support  
+    translate([0, 0, -tooth_support])
+    linear_extrude(height = tooth_support)
+    square([(tooth_width*tooth_count)+(tooth_gap*(tooth_count-1)), tooth_thickness], center = true);
+
 //Handles
      // Handle Center
         translate([0, 0, body_z])
-        linear_extrude(height = 7, scale = 0.6)
+        linear_extrude(height = 20, scale = 0.6)
         square([20, 4], center = true);
     // Handle left
         translate([(-body_x/2)+11.75, 0, body_z])
-        linear_extrude(height = 5, scale = 0.6)
+        linear_extrude(height = 15, scale = 0.6)
         square([20, 4], center = true);
     // Handle right
         translate([(body_x/2)-11.75, 0, body_z])
-        linear_extrude(height = 5, scale = 0.6)
+        linear_extrude(height = 15, scale = 0.6)
         square([20, 4], center = true);
 
-// Left support structure
+// Left support square
 	// Support base 
         translate([(-body_x/2)+2.5, 0, 0])
     	linear_extrude(height = 2)
@@ -44,7 +62,7 @@ union() {
         linear_extrude(height = 3, scale = 0.3)
         square([5, 15], center = true);
     
-// Right support structure
+// Right support square
 	// Support base 
         translate([(body_x/2)-support_x, 0, 0])
     	linear_extrude(height = 2)
