@@ -1,33 +1,20 @@
 echo(version=version());
-// Values are measured in mm
+// Parameters used to generator model (Values are measured in mm)
 
-// Number of wells
-tooth_count = 8; 
+tooth_count = 8; // Number of wells
+tooth_width = 5.6; // Width of each tooth
+tooth_thickness = 1.5; // Thickness of each tooth
+tooth_gap = 1.6; // Spacing between teeth.
+tooth_length = 17.75;  // Length of teeth (measured perpendicular from bottom of support)
+text_label = "Your Text Here"; // Label or name you want to appear on the side
+tooth_support = 6;// Height of upper support on teeth
 
-// Width of each tooth
-tooth_width = 5.6; 
+// Include square blocks on bottom of support
+locking_block_supports = "yes"; // [yes, no]
 
-// Thickness of each tooth
-tooth_thickness = 1.5; 
-
-// Spacing between teeth.
-tooth_gap = 1.6; 
-
-// Length of teeth (measured perpendicular from bottom of support)
-tooth_length = 17.75;  
-
-// Label or name you want to appear on the side
-text_label = "Your Text Here"; 
-
-// Height of upper support on teeth
-tooth_support = 6;
-
-
+//Main block of code
 union() { 
-// Locking Blocks.  Delete the following two lines to remove square blocks on underside of comb
-    translate([(body_x/2)-support_x, 0, -support_z]) linear_extrude(height = support_z) square([support_x, support_y], center = false); // Right
-    translate([-body_x/2, 0, -support_z]) linear_extrude(height = support_z) square([support_x, support_y], center = false); // Left
-     
+
 // Primary support bar 
     translate([0, 0, 0])
     linear_extrude(height = 5, scale = 0.95)
@@ -41,15 +28,15 @@ union() {
 //Handles
      // Handle Center
         translate([0, 0, body_z])
-        linear_extrude(height = 20, scale = 0.6)
+        linear_extrude(height = 7, scale = 0.6)
         square([20, 4], center = true);
     // Handle left
         translate([(-body_x/2)+11.75, 0, body_z])
-        linear_extrude(height = 15, scale = 0.6)
+        linear_extrude(height = 5, scale = 0.6)
         square([20, 4], center = true);
     // Handle right
         translate([(body_x/2)-11.75, 0, body_z])
-        linear_extrude(height = 15, scale = 0.6)
+        linear_extrude(height = 5, scale = 0.6)
         square([20, 4], center = true);
 
 // Left support square
@@ -74,6 +61,15 @@ union() {
 
 // Text placed on body of comb
     logo(text_label); 
+
+// Locking Blocks.
+	if(locking_block_supports == "yes")
+	{
+        // Right
+        translate([(body_x/2)-support_x, 0, -support_z]) linear_extrude(height = support_z) square([support_x, support_y], center = false); 
+        // Left
+        translate([-body_x/2, 0, -support_z]) linear_extrude(height = support_z) square([support_x, support_y], center = false); 
+	}
 
 //Teeth
 	translate([tooth_margin, 0, -tooth_length/2]) union() {
