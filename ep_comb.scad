@@ -65,9 +65,11 @@ union() {
 // Locking Blocks.
 	if(locking_block_supports == "yes")
 	{
-        // Right
+    
+    // Right
         translate([(body_x/2)-support_x, 0, -support_z]) linear_extrude(height = support_z) square([support_x, support_y], center = false); 
-        // Left
+
+    // Left
         translate([-body_x/2, 0, -support_z]) linear_extrude(height = support_z) square([support_x, support_y], center = false); 
 	}
 
@@ -79,7 +81,7 @@ union() {
 		}
 	}
 }
-//color("red")
+
 body_x = 84.84;
 body_z = 5;
 body_y = 5;
