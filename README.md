@@ -1,3 +1,6 @@
+[![DOI](https://zenodo.org/badge/51589511.svg)](https://zenodo.org/badge/latestdoi/51589511) [![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg)]() [![Crates.io](https://img.shields.io/crates/l/rustc-serialize.svg)]() [![Supported on OpenSCAD 2015.03-3](https://img.shields.io/badge/OpenSCAD-2015.03--3-yellow.svg)]()
+
+
 # Electrophoresis-Comb
 ![8 tooth comb](https://github.com/admish/Electrophoresis-Comb/blob/master/img/stl_preview.jpg)
 
